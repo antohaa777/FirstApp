@@ -1,26 +1,16 @@
 import './App.css'
 import styled, {isStyledComponent} from "styled-components";
-import {StyledBtn, SuperButton} from "./components/Button.styled.tsx";
+import {StyledBtn} from "./components/Button.styled.tsx";
 import { StyledLink } from './components/StyledLink.styled.tsx';
-import {Menu} from "./components/Menu.styled.tsx";
-
+import {myTheme} from "./styles/There.styled.tsx";
 
 function App() {
     return (
         <div className="App">
-            <Menu>
-                <ul>
-                    <li><a href="">menu item 1</a></li>
-                    <li><a href="">menu item 2</a></li>
-                    <li><a href="">menu item 3</a></li>
-                </ul>
 
-            </Menu>
             <Box>
-                <StyledBtn as={StyledLink} href={"#"}>LinkComponent</StyledBtn>
-                <StyledBtn as="a" href={"#"}>Link</StyledBtn>
-                <StyledBtn>Hello</StyledBtn>
-                <SuperButton>Super Button</SuperButton>
+                <StyledBtn color={myTheme.colors.primary}primary active>Hello</StyledBtn>
+                <StyledBtn color={myTheme.colors.secondary} outlined>Hello</StyledBtn>
             </Box>
         </div>
     )
@@ -44,7 +34,7 @@ const Box = styled.div`
         cursor: zoom-in;
     }
 
-    @media screen and (max-width: 800px) {
+    @media ${myTheme.media.tablet} {
         flex-direction: column;
     }
 `

@@ -1,4 +1,5 @@
 import {createGlobalStyle} from "styled-components";
+import {myTheme} from "./There.styled.tsx";
 
 export const GlobalStyles = createGlobalStyle`
     *,
@@ -9,6 +10,6 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
     body{
-        background-color: black;
+        background-color: ${myTheme.colors.grey.dark};
     }
 `
